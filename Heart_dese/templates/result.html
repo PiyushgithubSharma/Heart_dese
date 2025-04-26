@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-md text-center">
+        <h1 class="text-3xl font-bold mb-4">Prediction Result</h1>
+        <p class="text-xl mb-6">{{ prediction }}</p>
+        <a href="/" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">Try Again</a>
+    </div>
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #6EE7B7, #3B82F6, #9333EA);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen font-sans">
+
+  <div class="bg-white/20 backdrop-blur-lg p-10 rounded-3xl shadow-2xl text-center max-w-xl w-full fade-in">
+    <h1 class="text-5xl font-extrabold text-white mb-6 drop-shadow-lg">🌿 Prediction Result 🌿</h1>
+    <p class="text-2xl text-white mb-8 font-semibold tracking-wide">{{ prediction }}</p>
+    <a href="/" class="inline-block bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 hover:from-purple-500 hover:to-green-400 text-white text-lg font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300">
+      🔄 Try Again
+    </a>
+  </div>
+
+</body>
+</html>
+ -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #6EE7B7, #3B82F6, #9333EA);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulseRed {
+      0%, 100% { box-shadow: 0 0 20px 5px rgba(239, 68, 68, 0.6); }
+      50% { box-shadow: 0 0 30px 10px rgba(239, 68, 68, 0.8); }
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen font-sans">
+
+  <div id="result-card" class="bg-white/20 backdrop-blur-lg p-10 rounded-3xl shadow-2xl text-center max-w-xl w-full fade-in transition-all">
+    <h1 id="result-title" class="text-5xl font-extrabold text-white mb-6 drop-shadow-lg">🌿 Prediction Result 🌿</h1>
+    <p id="prediction-text" class="text-2xl text-white mb-8 font-semibold tracking-wide">{{ prediction }}</p>
+    <p id="extra-message" class="text-lg font-medium text-white"></p>
+    <a href="/" class="inline-block mt-6 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 hover:from-purple-500 hover:to-green-400 text-white text-lg font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300">
+      🔄 Try Again
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const prediction = "{{ prediction }}".toLowerCase();
+      const card = document.getElementById('result-card');
+      const title = document.getElementById('result-title');
+      const text = document.getElementById('prediction-text');
+      const extraMessage = document.getElementById('extra-message');
+
+      if (prediction.includes('high risk')) {
+        // Change styling for high risk
+        card.classList.add('bg-red-100', 'animate-pulse-red');
+        title.textContent = '🚨 High Risk Alert 🚨';
+        title.classList.remove('text-white');
+        title.classList.add('text-red-700');
+        text.classList.remove('text-white');
+        text.classList.add('text-red-600');
+        extraMessage.innerHTML = "⚠️ Immediate medical consultation is highly recommended.";
+        extraMessage.classList.add('text-red-700', 'mt-4');
+        card.style.animation = 'pulseRed 2s infinite';
+      }
+    });
+  </script>
+
+</body>
+</html>

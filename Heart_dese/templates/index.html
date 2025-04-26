@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease Prediction</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-6">
+
+  <div class="bg-white/30 backdrop-blur-lg rounded-2xl shadow-2xl p-10 w-full max-w-md border border-white/40">
+    <h1 class="text-4xl font-extrabold text-white text-center mb-8 animate-pulse">❤️ Heart Disease Predictor</h1>
+
+    <form action="/predict" method="post" class="space-y-6">
+      <div>
+        <label class="block mb-1 text-white font-semibold">Age</label>
+        <input type="number" name="age" placeholder="Enter Age" required
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent">
+      </div>
+
+      <div>
+        <label class="block mb-1 text-white font-semibold">Chest Pain Type (0-3)</label>
+        <input type="number" name="chest_pain" placeholder="Chest Pain Type" required
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+      </div>
+
+      <div>
+        <label class="block mb-1 text-white font-semibold">Heart Rate</label>
+        <input type="number" name="heart_rate" placeholder="Heart Rate" required
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent">
+      </div>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-yellow-500 hover:via-red-500 hover:to-pink-500 text-white font-bold py-3 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+        🔥 Predict
+      </button>
+    </form>
+  </div>
+
+</body>
+</html>
